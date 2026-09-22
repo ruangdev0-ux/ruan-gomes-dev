@@ -28,6 +28,9 @@
    ================================================================== */
 
 const PROJECTS = [
+  // ---------------------------------------------------------------
+  // Projeto 01 · SalesFlow
+  // ---------------------------------------------------------------
   {
     name: "SalesFlow",
     category: "Sistema Web de Gestão Comercial",
@@ -50,6 +53,10 @@ const PROJECTS = [
     demoUrl: "https://ruangdev0-ux.github.io/salesflow/",
     githubUrl: "https://github.com/ruangdev0-ux/salesflow",
   },
+
+  // ---------------------------------------------------------------
+  // Projeto 02 · SkyCast
+  // ---------------------------------------------------------------
   {
     name: "SkyCast",
     category: "Aplicação Web de Previsão do Tempo",
@@ -71,6 +78,12 @@ const PROJECTS = [
     demoUrl: "https://ruangdev0-ux.github.io/skycast/",
     githubUrl: "https://github.com/ruangdev0-ux/skycast",
   },
+
+  // ---------------------------------------------------------------
+  // Projeto 03 · cole aqui o próximo projeto (use o MODELO abaixo).
+  // Projeto 04, 05, 06...: repita o processo, sempre antes do "];".
+  // Não há nada a mudar no HTML, no CSS ou no script.js.
+  // ---------------------------------------------------------------
 ];
 
 /* ------------------------------ MODELO ------------------------------
