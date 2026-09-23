@@ -89,18 +89,19 @@ const PROJECTS = [
     description:
       "Tela de login que desenhei no Figma no primeiro semestre de ADS, em atividades de UI/UX, " +
       "design de interfaces e prototipagem, e depois reconstruí em código mantendo a identidade " +
-      "visual original. É uma interface Front-end de demonstração, sem autenticação real.",
+      "visual original. Tem um acesso de demonstração para testar o fluxo, com login simulado " +
+      "apenas no Front-end, sem autenticação real.",
     highlights: [
       "Protótipo mobile original feito no Figma",
-      "Interface reconstruída em HTML e CSS, sem imagens exportadas do Figma",
-      "Validação de e-mail e senha com mensagens de erro nos campos",
-      "Botão para mostrar e ocultar a senha",
-      "Estados de hover, foco e carregamento, com navegação por teclado",
-      "Layout responsivo de 320 px a 1920 px",
+      "Interface reconstruída em código e exibida dentro de um smartphone no desktop",
+      "Acesso de demonstração com botão para preencher os dados",
+      "Login simulado com tela de sucesso e aviso de credenciais incorretas",
+      "Validação dos campos, mostrar/ocultar senha e notificações discretas",
+      "Layout responsivo de 320 px a 1920 px, com navegação por teclado",
     ],
     technologies: ["UI/UX", "Figma", "Prototipagem", "HTML5", "CSS3", "JavaScript"],
     image: "assets/images/trilha-devs-login.webp",
-    imageAlt: "Duas telas de login da Trilha Devs: uma no estado inicial e outra com mensagens de validação nos campos de e-mail e senha",
+    imageAlt: "Dois smartphones com o app Trilha Devs: a tela de login com o acesso de demonstração e a tela de login de demonstração realizado com sucesso",
     demoUrl: "https://ruangdev0-ux.github.io/trilha-devs-login/",
     githubUrl: "https://github.com/ruangdev0-ux/trilha-devs-login",
   },
