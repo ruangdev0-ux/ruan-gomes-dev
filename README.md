@@ -17,7 +17,7 @@ Reunir em um único link quem eu sou, o que estudo, as tecnologias que uso, os p
 | Início | Apresentação, acesso aos projetos e ao GitHub e uma vitrine com capturas reais dos projetos |
 | Sobre | A trajetória da área comercial até a tecnologia e os diferenciais que ela me trouxe |
 | Tecnologias | JavaScript, HTML5, CSS3, APIs, LocalStorage, Git, GitHub, Python e C#, indicando onde cada uma aparece (sem porcentagens) |
-| Projetos | SalesFlow e SkyCast, com imagem, descrição, tecnologias, status e links |
+| Projetos | SalesFlow, SkyCast e Trilha Devs — Login, com imagem, descrição, tecnologias, status e links |
 | Formação | Análise e Desenvolvimento de Sistemas, Unifran, com conclusão prevista para dezembro de 2027 |
 | Contato | E-mail, GitHub, LinkedIn e Instagram, mais um botão para copiar o e-mail |
 
