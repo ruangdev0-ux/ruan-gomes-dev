@@ -80,8 +80,34 @@ const PROJECTS = [
   },
 
   // ---------------------------------------------------------------
-  // Projeto 03 · cole aqui o próximo projeto (use o MODELO abaixo).
-  // Projeto 04, 05, 06...: repita o processo, sempre antes do "];".
+  // Projeto 03 · Trilha Devs — Login
+  // ---------------------------------------------------------------
+  {
+    name: "Trilha Devs — Login",
+    category: "UI/UX · Do protótipo no Figma ao Front-end",
+    status: "Publicado",
+    description:
+      "Tela de login que desenhei no Figma no primeiro semestre de ADS, em atividades de UI/UX, " +
+      "design de interfaces e prototipagem, e depois reconstruí em código mantendo a identidade " +
+      "visual original. É uma interface Front-end de demonstração, sem autenticação real.",
+    highlights: [
+      "Protótipo mobile original feito no Figma",
+      "Interface reconstruída em HTML e CSS, sem imagens exportadas do Figma",
+      "Validação de e-mail e senha com mensagens de erro nos campos",
+      "Botão para mostrar e ocultar a senha",
+      "Estados de hover, foco e carregamento, com navegação por teclado",
+      "Layout responsivo de 320 px a 1920 px",
+    ],
+    technologies: ["UI/UX", "Figma", "Prototipagem", "HTML5", "CSS3", "JavaScript"],
+    image: "assets/images/trilha-devs-login.webp",
+    imageAlt: "Duas telas de login da Trilha Devs: uma no estado inicial e outra com mensagens de validação nos campos de e-mail e senha",
+    demoUrl: "https://ruangdev0-ux.github.io/trilha-devs-login/",
+    githubUrl: "https://github.com/ruangdev0-ux/trilha-devs-login",
+  },
+
+  // ---------------------------------------------------------------
+  // Projeto 04 · cole aqui o próximo projeto (use o MODELO abaixo).
+  // Projeto 05, 06, 07...: repita o processo, sempre antes do "];".
   // Não há nada a mudar no HTML, no CSS ou no script.js.
   // ---------------------------------------------------------------
 ];
