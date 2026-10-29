@@ -19,8 +19,12 @@
    technologies  Tecnologias utilizadas (lista)
    image         Caminho da captura de tela em assets/images/  (opcional)
    imageAlt      Descrição da imagem, para acessibilidade
-   demoUrl       Endereço do projeto publicado  → botão "Ver projeto"
-   githubUrl     Endereço do repositório        → botão "Código no GitHub"
+   demoUrl       Endereço do projeto publicado  → botão "Ver demonstração"
+   githubUrl     Endereço do repositório        → botão "Ver código"
+   links         Botões extras: [{ label, url, ghost }]          (opcional)
+   featured      true destaca o card como projeto principal      (opcional)
+   count         Quantos projetos o card reúne (padrão 1); usado
+                 no contador "projetos publicados" do início     (opcional)
 
    REGRA: use em demoUrl e githubUrl somente endereços reais, que você
    já abriu e funcionam. Se ainda não existirem, deixe "" (vazio): o
@@ -29,25 +33,26 @@
 
 const PROJECTS = [
   // ---------------------------------------------------------------
-  // Projeto 01 · SalesFlow
+  // Projeto 01 · SalesFlow (projeto principal)
   // ---------------------------------------------------------------
   {
     name: "SalesFlow",
-    category: "Sistema Web de Gestão Comercial",
+    featured: true,
+    category: "Sistema web de gestão comercial · JavaScript puro",
     status: "Publicado",
     description:
-      "Sistema de gestão comercial para pequenos negócios e vendedores autônomos, com cadastro " +
-      "de clientes e produtos, registro de vendas com controle de estoque e um dashboard com os " +
-      "principais números. Feito em JavaScript puro, sem frameworks, com os dados salvos no navegador.",
+      "Sistema com cadastro de clientes e produtos, vendas com vários itens e baixa automática do " +
+      "estoque. Feito em JavaScript puro, sem frameworks, com o código organizado em camadas " +
+      "(dados, regras de negócio, interface e telas), testes unitários e CI/CD com GitHub Actions.",
     highlights: [
-      "Dashboard com faturamento, valores a receber e alerta de estoque baixo",
-      "Cadastro, edição, exclusão e busca de clientes e produtos",
+      "CRUD completo de clientes e produtos, com busca",
       "Vendas com vários itens e baixa automática do estoque",
-      "Status de venda: pendente, paga e cancelada",
+      "Regras de negócio: status da venda, estoque insuficiente e exclusões protegidas",
       "Validação de formulários e tratamento de erros",
-      "Testes unitários da lógica de negócio",
+      "Código em camadas: dados, serviços, interface e telas",
+      "Testes unitários com node:test, rodando no GitHub Actions antes de cada deploy",
     ],
-    technologies: ["JavaScript", "HTML5", "CSS3", "LocalStorage", "node:test", "GitHub Actions"],
+    technologies: ["JavaScript", "HTML", "CSS", "localStorage", "node:test", "GitHub Actions"],
     image: "assets/images/salesflow.webp",
     imageAlt: "Dashboard do SalesFlow com faturamento, valores a receber, vendas, clientes e produtos",
     demoUrl: "https://ruangdev0-ux.github.io/salesflow/",
@@ -55,24 +60,53 @@ const PROJECTS = [
   },
 
   // ---------------------------------------------------------------
-  // Projeto 02 · SkyCast
+  // Projeto 02 · Ordena e Prateleira (Vortyx) — conta como 2 projetos
+  // ---------------------------------------------------------------
+  {
+    name: "Ordena e Prateleira",
+    count: 2,
+    category: "Protótipos SaaS da Vortyx · dados fictícios",
+    status: "Demonstração",
+    description:
+      "Dois protótipos de SaaS que rodam inteiramente no navegador, com empresas, pessoas e números " +
+      "fictícios. O Ordena é uma central de atendimento; o Prateleira faz a gestão de pedidos e estoque " +
+      "de várias unidades. São demonstrações, não sistemas de cliente em produção.",
+    highlights: [
+      "Perfis de acesso: cada perfil vê telas e ações diferentes",
+      "Pedidos, estoque com alertas de mínimo e quadro Kanban",
+      "Relatórios e indicadores por período",
+      "Ordena: classificação de mensagens por “IA” simulada por regras no navegador",
+      "Layout responsivo",
+      "Acessibilidade: navegação por teclado e ARIA",
+    ],
+    technologies: ["JavaScript", "HTML", "CSS", "localStorage", "Acessibilidade"],
+    image: "assets/images/ordena-prateleira.webp",
+    imageAlt: "Telas dos protótipos Ordena, com a caixa de entrada de atendimento, e Prateleira, com o painel de pedidos e estoque",
+    links: [
+      { label: "Ver Ordena", url: "https://somosvortyx.com.br/demonstracoes/saas/central-atendimento/" },
+      { label: "Ver Prateleira", url: "https://somosvortyx.com.br/demonstracoes/saas/pedidos-estoque/", ghost: true },
+    ],
+  },
+
+  // ---------------------------------------------------------------
+  // Projeto 03 · SkyCast
   // ---------------------------------------------------------------
   {
     name: "SkyCast",
-    category: "Aplicação Web de Previsão do Tempo",
+    category: "Aplicação web de previsão do tempo · API REST",
     status: "Publicado",
     description:
-      "Painel que mostra as condições atuais e a previsão de 7 dias para qualquer cidade do mundo, " +
-      "consumindo a API gratuita Open-Meteo. O deploy é automático, com GitHub Actions e GitHub Pages.",
+      "Painel com as condições atuais e a previsão de 7 dias para qualquer cidade, consumindo a API " +
+      "REST Open-Meteo. Build com Vite e deploy automático com GitHub Actions e GitHub Pages.",
     highlights: [
-      "Busca por nome de cidade",
-      "Opção de usar a localização do navegador",
-      "Temperatura, sensação térmica, umidade, vento e chance de chuva",
+      "Consumo da API REST Open-Meteo com fetch e async/await",
+      "Busca por cidade e localização pela Geolocation API",
+      "Tratamento de erros com mensagens claras",
       "Previsão de 7 dias com ícone e descrição",
-      "Mensagens de erro claras",
+      "Build com Vite e deploy pelo GitHub Actions",
       "Layout adaptado para telas menores",
     ],
-    technologies: ["JavaScript", "HTML5", "CSS3", "API Open-Meteo", "Vite", "GitHub Actions"],
+    technologies: ["JavaScript", "API REST", "fetch", "Geolocation API", "Vite", "GitHub Actions"],
     image: "assets/images/skycast.webp",
     imageAlt: "Painel do SkyCast com as condições atuais e a previsão de 7 dias para São Paulo",
     demoUrl: "https://ruangdev0-ux.github.io/skycast/",
@@ -80,26 +114,25 @@ const PROJECTS = [
   },
 
   // ---------------------------------------------------------------
-  // Projeto 03 · Trilha Devs — Login
+  // Projeto 04 · Trilha Devs — Login
   // ---------------------------------------------------------------
   {
     name: "Trilha Devs — Login",
-    category: "UI/UX · Do protótipo no Figma ao Front-end",
+    category: "Projeto acadêmico · do Figma ao código",
     status: "Publicado",
     description:
-      "Tela de login que desenhei no Figma no primeiro semestre de ADS, em atividades de UI/UX, " +
-      "design de interfaces e prototipagem, e depois reconstruí em código mantendo a identidade " +
-      "visual original. Tem um acesso de demonstração para testar o fluxo, com login simulado " +
-      "apenas no Front-end, sem autenticação real.",
+      "Tela de login que desenhei no Figma em atividades de UI/UX da graduação e depois reconstruí em " +
+      "HTML, CSS e JavaScript, mantendo a identidade visual. O login é simulado apenas no front-end, " +
+      "sem autenticação real.",
     highlights: [
-      "Protótipo mobile original feito no Figma",
-      "Interface reconstruída em código e exibida dentro de um smartphone no desktop",
-      "Acesso de demonstração com botão para preencher os dados",
-      "Login simulado com tela de sucesso e aviso de credenciais incorretas",
-      "Validação dos campos, mostrar/ocultar senha e notificações discretas",
-      "Layout responsivo de 320 px a 1920 px, com navegação por teclado",
+      "Protótipo original no Figma, reconstruído em código",
+      "Validação dos campos em tempo real",
+      "Acesso de demonstração e aviso de credenciais incorretas",
+      "Mostrar/ocultar senha e mensagens acessíveis",
+      "Navegação por teclado e foco visível",
+      "Layout responsivo de 320 px a 1920 px",
     ],
-    technologies: ["UI/UX", "Figma", "Prototipagem", "HTML5", "CSS3", "JavaScript"],
+    technologies: ["Figma", "HTML", "CSS", "JavaScript", "Acessibilidade"],
     image: "assets/images/trilha-devs-login.webp",
     imageAlt: "Dois smartphones com o app Trilha Devs: a tela de login com o acesso de demonstração e a tela de login de demonstração realizado com sucesso",
     demoUrl: "https://ruangdev0-ux.github.io/trilha-devs-login/",
@@ -107,10 +140,27 @@ const PROJECTS = [
   },
 
   // ---------------------------------------------------------------
-  // Projeto 04 · cole aqui o próximo projeto (use o MODELO abaixo).
-  // Projeto 05, 06, 07...: repita o processo, sempre antes do "];".
-  // Não há nada a mudar no HTML, no CSS ou no script.js.
+  // Projeto 05 · Demo PDV — Lanchonete Demo
   // ---------------------------------------------------------------
+  {
+    name: "Demo PDV — Lanchonete Demo",
+    category: "Demonstração fictícia de frente de caixa",
+    status: "Publicado",
+    description:
+      "Demonstração fictícia de PDV para lanchonete com vendas, adicionais, pagamentos simulados, " +
+      "comprovante, caixa do dia, delivery e relatórios, usando HTML, CSS, JavaScript e localStorage.",
+    highlights: [
+      "Vendas com adicionais e cálculo de troco",
+      "Pagamentos, gaveta e pedidos de delivery simulados",
+      "Comprovante em 80 mm com impressão pelo navegador",
+      "Caixa do dia, fechamento e relatórios por período",
+    ],
+    technologies: ["JavaScript", "HTML", "CSS", "localStorage"],
+    image: "assets/images/demo-pdv.webp",
+    imageAlt: "Tela de venda da Demo PDV com categorias, produtos fictícios e o pedido atual",
+    demoUrl: "https://ruangdev0-ux.github.io/demo-pdv-lanchonete/",
+    githubUrl: "https://github.com/ruangdev0-ux/demo-pdv-lanchonete",
+  },
 ];
 
 /* ------------------------------ MODELO ------------------------------

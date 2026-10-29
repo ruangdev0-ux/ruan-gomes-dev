@@ -52,7 +52,7 @@
     if (isValidUrl(project.demoUrl)) {
       buttons.push(`
         <a class="btn btn--primary btn--sm" href="${escapeHTML(project.demoUrl.trim())}" target="_blank" rel="noopener noreferrer">
-          Ver projeto<span class="sr-only"> ${name} (abre em nova aba)</span>
+          Ver demonstração<span class="sr-only"> do ${name} (abre em nova aba)</span>
           <svg class="icon" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
         </a>`);
     }
@@ -60,17 +60,27 @@
       buttons.push(`
         <a class="btn btn--ghost btn--sm" href="${escapeHTML(project.githubUrl.trim())}" target="_blank" rel="noopener noreferrer">
           <svg class="icon" aria-hidden="true"><use href="#i-github"/></svg>
-          Código no GitHub<span class="sr-only"> do ${name} (abre em nova aba)</span>
+          Ver código<span class="sr-only"> do ${name} no GitHub (abre em nova aba)</span>
         </a>`);
     }
+    (project.links || []).filter((link) => link && link.label && isValidUrl(link.url)).forEach((link) => {
+      buttons.push(`
+        <a class="btn ${link.ghost ? "btn--ghost" : "btn--primary"} btn--sm" href="${escapeHTML(link.url.trim())}" target="_blank" rel="noopener noreferrer">
+          ${escapeHTML(link.label)}<span class="sr-only"> (demonstração, abre em nova aba)</span>
+          <svg class="icon" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
+        </a>`);
+    });
 
     return `
-      <article class="project" data-animate aria-labelledby="${titleId}">
+      <article class="project${project.featured ? " project--featured" : ""}" data-animate aria-labelledby="${titleId}">
         ${media}
         <div class="project__body">
           <div class="project__meta">
             <span class="project__number" aria-hidden="true">${number}</span>
-            ${project.status ? `<span class="badge badge--live"><span class="status-dot" aria-hidden="true"></span>${escapeHTML(project.status)}</span>` : ""}
+            <span class="project__badges">
+              ${project.featured ? `<span class="badge badge--featured">Projeto principal</span>` : ""}
+              ${project.status ? `<span class="badge badge--live"><span class="status-dot" aria-hidden="true"></span>${escapeHTML(project.status)}</span>` : ""}
+            </span>
           </div>
           <h3 class="project__name" id="${titleId}">${name}</h3>
           ${project.category ? `<p class="project__category">${escapeHTML(project.category)}</p>` : ""}
@@ -88,6 +98,12 @@
     const valid = list.filter((project) => project && project.name);
     if (!container || !valid.length) return;
     container.innerHTML = valid.map(renderProject).join("");
+
+    // Contador do início: soma os projetos de cada card (um card pode reunir mais de um).
+    const counter = document.getElementById("projects-count");
+    if (counter) {
+      counter.textContent = String(valid.reduce((total, project) => total + (Number(project.count) || 1), 0));
+    }
   };
 
   /* ---------- 2. Menu responsivo ---------- */
