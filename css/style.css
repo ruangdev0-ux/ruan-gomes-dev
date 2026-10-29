@@ -618,6 +618,21 @@ strong {
   color: var(--text-soft);
 }
 
+.hero__stack {
+  margin-bottom: 20px;
+  font-family: var(--font-mono);
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+.hero__stack-line {
+  color: var(--accent-light);
+}
+
+.hero__stack-study {
+  color: var(--text-mute);
+}
+
 .hero__lead {
   max-width: 35rem;
   margin-bottom: 32px;
@@ -657,6 +672,9 @@ strong {
 .showcase__window--back {
   top: 0;
   right: 0;
+}
+
+.showcase__window--back img {
   opacity: 0.85;
 }
 
@@ -756,60 +774,8 @@ strong {
   line-height: 1.65;
 }
 
-.journey {
-  display: grid;
-  gap: 0;
-  margin-top: 32px;
-  border-left: 1px solid var(--line-strong);
-}
-
-.journey__step {
-  position: relative;
-  display: grid;
-  gap: 2px;
-  padding: 0 0 22px 26px;
-}
-
-.journey__step:last-child {
-  padding-bottom: 0;
-}
-
-.journey__step::before {
-  content: "";
-  position: absolute;
-  left: -6px;
-  top: 7px;
-  width: 11px;
-  height: 11px;
-  border-radius: 50%;
-  border: 2px solid var(--accent);
-  background: var(--bg);
-}
-
-.journey__step--current::before {
-  background: var(--accent);
-  box-shadow: 0 0 0 5px rgba(91, 155, 240, 0.2);
-}
-
-.journey__index {
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  color: var(--text-mute);
-}
-
-.journey__name {
-  font-family: var(--font-display);
-  font-size: 1.08rem;
-  font-weight: 600;
-  line-height: 1.3;
-}
-
-.journey__info {
-  color: var(--text-soft);
-  font-size: 0.93rem;
-}
-
-.about__edges-title {
+/* Resumo ao lado do texto: o que busco, formação e experiência */
+.about__summary-title {
   margin-bottom: 16px;
   font-family: var(--font-body);
   font-size: 1rem;
@@ -818,54 +784,60 @@ strong {
   color: var(--text-soft);
 }
 
-.edges {
+.facts {
   display: grid;
-  gap: 12px;
+  gap: 10px;
 }
 
-.edge {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  grid-template-rows: auto auto;
-  column-gap: 16px;
-  align-items: center;
-  padding: 18px;
+.fact {
+  padding: 16px 18px;
   border: 1px solid var(--line);
   border-radius: var(--r-md);
   background: var(--surface);
-  transition: border-color var(--t), transform var(--t), background-color var(--t);
 }
 
-.edge:hover {
+.fact dt {
+  margin-bottom: 2px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+}
+
+.fact dd {
+  font-family: var(--font-display);
+  font-size: 1.08rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.fact--highlight {
   border-color: var(--line-accent);
   background: var(--surface-2);
-  transform: translateY(-2px);
-}
-
-.edge__icon {
-  grid-row: 1 / span 2;
-  display: grid;
-  place-items: center;
-  width: 46px;
-  height: 46px;
-  border-radius: 13px;
-  border: 1px solid var(--line);
-  background: rgba(255, 255, 255, 0.04);
-  color: var(--accent-light);
-  font-size: 1.2rem;
-}
-
-.edge__name {
-  font-size: 1.02rem;
-}
-
-.edge__text {
-  color: var(--text-soft);
-  font-size: 0.92rem;
-  line-height: 1.5;
 }
 
 /* ---------- 7. Tecnologias ---------- */
+.stack__title {
+  margin: 0 0 16px;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+}
+
+.stack + .stack__title {
+  margin-top: 40px;
+}
+
+.tech__use code {
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+  color: var(--accent-pale);
+}
+
 .stack {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1039,6 +1011,23 @@ strong {
   gap: 12px;
 }
 
+.project__badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.badge--featured {
+  border-color: var(--line-accent);
+  background: rgba(91, 155, 240, 0.12);
+  color: var(--accent-pale);
+}
+
+.project--featured {
+  border-color: var(--line-strong);
+}
+
 .project__number {
   font-family: var(--font-mono);
   font-size: 0.9rem;
@@ -1172,6 +1161,97 @@ strong {
 .course__fact--highlight {
   border-color: var(--line-accent);
   background: var(--surface-2);
+}
+
+/* ---------- 9b. Experiência ---------- */
+.job {
+  display: grid;
+  gap: 18px;
+  padding: 26px 22px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  background: var(--surface);
+}
+
+.job__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.job__role {
+  margin-bottom: 4px;
+  font-size: clamp(1.45rem, 1.1rem + 1.5vw, 2.1rem);
+  font-weight: 700;
+}
+
+.job__org {
+  font-weight: 500;
+  color: var(--accent-light);
+}
+
+.job__context {
+  color: var(--text-soft);
+}
+
+/* Certificados */
+.certs__title {
+  margin-top: 48px;
+}
+
+.certs {
+  display: grid;
+  gap: 12px;
+}
+
+.cert {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  background: var(--surface);
+  transition: border-color var(--t), background-color var(--t);
+}
+
+.cert:hover {
+  border-color: var(--line-accent);
+  background: var(--surface-2);
+}
+
+.cert__name {
+  font-size: 1.02rem;
+  line-height: 1.35;
+}
+
+.cert__meta {
+  flex: 1;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text-mute);
+}
+
+.cert__link {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  gap: 6px;
+  min-height: 44px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--accent-light);
+  text-decoration: underline;
+  text-decoration-color: rgba(156, 195, 247, 0.4);
+  text-underline-offset: 3px;
+  transition: color var(--t);
+}
+
+.cert__link:hover {
+  color: var(--accent-pale);
 }
 
 /* ---------- 10. Contato ---------- */
@@ -1410,32 +1490,12 @@ strong {
 
 /* ≥ 640px */
 @media (min-width: 640px) {
-  .edges {
+  .certs {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .edge {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-    align-content: start;
-    row-gap: 4px;
-  }
-
-  .edge__icon {
-    grid-row: auto;
-    margin-bottom: 10px;
-  }
-
-  .edge--full {
-    grid-column: 1 / -1;
-    grid-template-columns: auto 1fr;
-    grid-template-rows: auto auto;
-    align-items: center;
-  }
-
-  .edge--full .edge__icon {
-    grid-row: 1 / span 2;
-    margin-bottom: 0;
+  .job {
+    padding: 34px;
   }
 
   .channels {
@@ -1573,6 +1633,19 @@ strong {
     padding: 44px;
   }
 
+  .job {
+    padding: 44px;
+  }
+
+  .job__list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 28px;
+  }
+
+  .certs {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
   .course__facts {
     grid-template-columns: 1fr;
   }
@@ -1623,6 +1696,31 @@ strong {
   .projects {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 28px;
+  }
+
+  /* Projeto principal ocupa a linha inteira, com imagem e texto lado a lado */
+  .project--featured {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  }
+
+  .project--featured .project__media {
+    display: flex;
+    align-items: center;
+    padding: 32px;
+    border-bottom: 0;
+    border-right: 1px solid var(--line);
+  }
+
+  .project--featured .project__frame {
+    width: 100%;
+    border-bottom: 1px solid var(--line-strong);
+    border-radius: 12px;
+  }
+
+  .project--featured .project__list {
+    grid-template-columns: 1fr;
   }
 
   .project__list {
