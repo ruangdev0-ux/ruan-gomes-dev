@@ -65,7 +65,7 @@ const PROJECTS = [
   {
     name: "Ordena e Prateleira",
     count: 2,
-    category: "Protótipos SaaS da Vortyx · dados fictícios",
+    category: "Ordena + Prateleira — 2 protótipos SaaS · Vortyx · dados fictícios",
     status: "Demonstração",
     description:
       "Dois protótipos de SaaS que rodam inteiramente no navegador, com empresas, pessoas e números " +
