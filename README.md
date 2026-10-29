@@ -20,7 +20,7 @@ Reunir em um único link quem eu sou, o que busco, as tecnologias que uso, os pr
 | Projetos | SalesFlow (principal), Ordena e Prateleira, SkyCast, Trilha Devs — Login e Demo PDV, com imagem, descrição, tecnologias e links |
 | Experiência | Vortyx, como Fundador & Desenvolvedor |
 | Formação | Análise e Desenvolvimento de Sistemas, Unifran (fev/2026 – dez/2027) e certificados com link para a credencial |
-| Contato | LinkedIn, GitHub, e-mail, WhatsApp e Instagram, mais um botão para copiar o e-mail |
+| Contato | LinkedIn, GitHub e e-mail como canais principais, Instagram como secundário, mais um botão para copiar o e-mail |
 
 Também inclui:
 
