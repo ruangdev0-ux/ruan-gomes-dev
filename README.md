@@ -1,6 +1,6 @@
 # Ruan Gomes.dev
 
-Site profissional e portfólio de **Ruan Gomes**, estudante de Análise e Desenvolvimento de Sistemas: desenvolvimento de software, tecnologia e projetos.
+Portfólio de **Ruan Gomes**, estudante de Análise e Desenvolvimento de Sistemas (Unifran) em busca de estágio em Desenvolvimento de Software.
 
 🔗 **Site publicado:** https://ruangdev0-ux.github.io/ruan-gomes-dev/
 
@@ -8,18 +8,19 @@ Site profissional e portfólio de **Ruan Gomes**, estudante de Análise e Desenv
 
 ## Objetivo
 
-Reunir em um único link quem eu sou, o que estudo, as tecnologias que uso, os projetos que já publiquei e as formas de falar comigo. Esse link é o que uso na bio do Instagram, no LinkedIn, no GitHub e no currículo.
+Reunir em um único link quem eu sou, o que busco, as tecnologias que uso, os projetos que já publiquei, minha experiência, formação e certificados, e as formas de falar comigo. É o link que uso no LinkedIn e no GitHub.
 
 ## Conteúdo
 
 | Seção | O que mostra |
 | --- | --- |
-| Início | Apresentação, acesso aos projetos e ao GitHub e uma vitrine com capturas reais dos projetos |
-| Sobre | A trajetória da área comercial até a tecnologia e os diferenciais que ela me trouxe |
-| Tecnologias | JavaScript, HTML5, CSS3, APIs, LocalStorage, Git, GitHub, Python e C#, indicando onde cada uma aparece (sem porcentagens) |
-| Projetos | SalesFlow, SkyCast e Trilha Devs — Login, com imagem, descrição, tecnologias, status e links |
-| Formação | Análise e Desenvolvimento de Sistemas, Unifran, com conclusão prevista para dezembro de 2027 |
-| Contato | E-mail, GitHub, LinkedIn e Instagram, mais um botão para copiar o e-mail |
+| Início | Nome, objetivo (estágio em Desenvolvimento de Software), linha de tecnologias, botões para projetos, GitHub e LinkedIn e uma vitrine com capturas reais |
+| Sobre | Formação, objetivo, interesse em desenvolvimento e back-end, aprendizado por projetos e um resumo rápido |
+| Tecnologias | Separadas entre "Uso em projetos" e "Em estudo", indicando onde cada uma aparece (sem porcentagens) |
+| Projetos | SalesFlow (principal), Ordena e Prateleira, SkyCast, Trilha Devs — Login e Demo PDV, com imagem, descrição, tecnologias e links |
+| Experiência | Vortyx, como Fundador & Desenvolvedor |
+| Formação | Análise e Desenvolvimento de Sistemas, Unifran (fev/2026 – dez/2027) e certificados com link para a credencial |
+| Contato | LinkedIn, GitHub, e-mail, WhatsApp e Instagram, mais um botão para copiar o e-mail |
 
 Também inclui:
 
@@ -47,7 +48,7 @@ ruan-gomes-dev/
 │   └── style.css           # Estilos, organizados por seção
 ├── js/
 │   ├── projects.js         # LISTA DE PROJETOS: edite aqui para adicionar novos
-│   └── script.js           # Menu, animações, seção ativa, cards e cópia do e-mail
+│   └── script.js           # Menu, animações, seção ativa, cards, contador e cópia do e-mail
 ├── assets/
 │   ├── images/             # Capturas dos projetos e imagem de compartilhamento
 │   └── icons/              # Favicons "RG"
@@ -76,20 +77,30 @@ Todos os projetos ficam em [`js/projects.js`](js/projects.js).
    | `technologies` | Lista de tecnologias |
    | `image` | Caminho da captura em `assets/images/` (opcional) |
    | `imageAlt` | Descrição da imagem |
-   | `demoUrl` | Endereço do projeto publicado, que gera o botão **Ver projeto** |
-   | `githubUrl` | Endereço do repositório, que gera o botão **Código no GitHub** |
+   | `demoUrl` | Endereço do projeto publicado, que gera o botão **Ver demonstração** |
+   | `githubUrl` | Endereço do repositório, que gera o botão **Ver código** |
+   | `links` | Botões extras, como `[{ label: "Ver Ordena", url: "https://..." }]` (opcional) |
+   | `featured` | `true` destaca o card como projeto principal (opcional) |
+   | `count` | Quantos projetos o card reúne, usado no contador do início (opcional) |
 
 3. (Opcional) Envie a captura de tela para `assets/images/`.
 4. Faça o commit. O card e a numeração (01, 02, 03…) são criados automaticamente.
 
 **Regra:** `demoUrl` e `githubUrl` só devem receber endereços reais, já testados. Se ainda não existirem, deixe `""`: o botão correspondente não aparece.
 
+## Currículo
+
+Ainda não há currículo publicado. Quando houver um PDF atualizado e aprovado, salve em `assets/docs/curriculo-ruan-gomes.pdf` e descomente o botão "Currículo (PDF)" marcado no início do `index.html`.
+
 ## Projetos apresentados
 
-- **SalesFlow**, sistema web de gestão comercial: [site](https://ruangdev0-ux.github.io/salesflow/) · [código](https://github.com/ruangdev0-ux/salesflow)
-- **SkyCast**, aplicação web de previsão do tempo: [site](https://ruangdev0-ux.github.io/skycast/) · [código](https://github.com/ruangdev0-ux/skycast)
+- **SalesFlow**, sistema web de gestão comercial: [demonstração](https://ruangdev0-ux.github.io/salesflow/) · [código](https://github.com/ruangdev0-ux/salesflow)
+- **Ordena** e **Prateleira**, protótipos SaaS da Vortyx com dados fictícios: [Ordena](https://somosvortyx.com.br/demonstracoes/saas/central-atendimento/) · [Prateleira](https://somosvortyx.com.br/demonstracoes/saas/pedidos-estoque/)
+- **SkyCast**, aplicação web de previsão do tempo: [demonstração](https://ruangdev0-ux.github.io/skycast/) · [código](https://github.com/ruangdev0-ux/skycast)
+- **Trilha Devs — Login**, projeto acadêmico do Figma ao código: [demonstração](https://ruangdev0-ux.github.io/trilha-devs-login/) · [código](https://github.com/ruangdev0-ux/trilha-devs-login)
+- **Demo PDV — Lanchonete Demo**, demonstração fictícia de frente de caixa: [demonstração](https://ruangdev0-ux.github.io/demo-pdv-lanchonete/) · [código](https://github.com/ruangdev0-ux/demo-pdv-lanchonete)
 
-As imagens desses projetos são capturas de tela que já estão nos próprios repositórios.
+As imagens dos projetos são capturas de tela das próprias aplicações.
 
 ## Autor
 
