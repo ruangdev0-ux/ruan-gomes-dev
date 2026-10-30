@@ -20,6 +20,7 @@
    image         Caminho da captura de tela em assets/images/  (opcional)
    imageAlt      Descrição da imagem, para acessibilidade
    demoUrl       Endereço do projeto publicado  → botão "Ver demonstração"
+   demoLabel     Texto do botão do demoUrl, se não for "Ver demonstração" (opcional)
    githubUrl     Endereço do repositório        → botão "Ver código"
    links         Botões extras: [{ label, url, ghost }]          (opcional)
    featured      true destaca o card como projeto principal      (opcional)
@@ -33,7 +34,61 @@
 
 const PROJECTS = [
   // ---------------------------------------------------------------
-  // Projeto 01 · SalesFlow (projeto principal)
+  // Projeto 01 · StockCore API (projeto principal)
+  // ---------------------------------------------------------------
+  {
+    name: "StockCore API",
+    featured: true,
+    category: "API REST de controle de estoque · C# e .NET 8",
+    status: "Publicado",
+    description:
+      "Projeto pessoal de back-end: API de estoque com entradas e saídas, estornos, estoque mínimo, " +
+      "alertas e relatórios, em arquitetura em camadas com Entity Framework Core e PostgreSQL.",
+    highlights: [
+      "Saldo nunca negativo, com a regra no domínio e no banco",
+      "Controle de concorrência com SELECT ... FOR UPDATE",
+      "Estorno em transação, sem apagar o histórico",
+      "Autenticação JWT com papéis e validação com FluentValidation",
+      "Migrations do Entity Framework Core checadas no CI",
+      "90 testes (44 unitários e 46 de integração) no GitHub Actions",
+    ],
+    technologies: ["C#", ".NET 8", "ASP.NET Core", "EF Core", "PostgreSQL", "xUnit", "GitHub Actions"],
+    image: "assets/images/stockcore-api.webp",
+    imageAlt: "Documentação Swagger da StockCore API com as rotas de alertas, autenticação e categorias",
+    demoUrl: "https://ruangdev0-ux.github.io/stockcore-api/",
+    demoLabel: "Ver documentação da API",
+    githubUrl: "https://github.com/ruangdev0-ux/stockcore-api",
+  },
+
+  // ---------------------------------------------------------------
+  // Projeto 02 · TeamTasks API (projeto principal)
+  // ---------------------------------------------------------------
+  {
+    name: "TeamTasks API",
+    featured: true,
+    category: "API REST de tarefas e equipes · TypeScript e Node.js",
+    status: "Publicado",
+    description:
+      "Projeto pessoal de back-end: API com usuários, equipes, projetos e tarefas, papéis e permissões, " +
+      "fluxo de status e histórico, com Express e PostgreSQL.",
+    highlights: [
+      "Autenticação com JWT e senhas com bcrypt",
+      "Papéis e permissões por equipe",
+      "Fluxo de status validado e histórico de alterações",
+      "Filtros e paginação",
+      "Validação com Zod e documentação Swagger/OpenAPI",
+      "70 testes (35 unitários e 35 de integração) no GitHub Actions",
+    ],
+    technologies: ["TypeScript", "Node.js", "Express", "PostgreSQL", "Drizzle ORM", "Vitest", "GitHub Actions"],
+    image: "assets/images/teamtasks-api.webp",
+    imageAlt: "Documentação Swagger da TeamTasks API com as rotas de autenticação e equipes",
+    demoUrl: "https://ruangdev0-ux.github.io/teamtasks-api/",
+    demoLabel: "Ver documentação da API",
+    githubUrl: "https://github.com/ruangdev0-ux/teamtasks-api",
+  },
+
+  // ---------------------------------------------------------------
+  // Projeto 03 · SalesFlow (projeto principal)
   // ---------------------------------------------------------------
   {
     name: "SalesFlow",
@@ -60,7 +115,7 @@ const PROJECTS = [
   },
 
   // ---------------------------------------------------------------
-  // Projeto 02 · Ordena e Prateleira (Vortyx) — conta como 2 projetos
+  // Projeto 04 · Ordena e Prateleira (Vortyx) — conta como 2 projetos
   // ---------------------------------------------------------------
   {
     name: "Ordena e Prateleira",
@@ -89,7 +144,7 @@ const PROJECTS = [
   },
 
   // ---------------------------------------------------------------
-  // Projeto 03 · SkyCast
+  // Projeto 05 · SkyCast
   // ---------------------------------------------------------------
   {
     name: "SkyCast",
@@ -114,7 +169,7 @@ const PROJECTS = [
   },
 
   // ---------------------------------------------------------------
-  // Projeto 04 · Trilha Devs — Login
+  // Projeto 06 · Trilha Devs — Login
   // ---------------------------------------------------------------
   {
     name: "Trilha Devs — Login",
@@ -140,7 +195,7 @@ const PROJECTS = [
   },
 
   // ---------------------------------------------------------------
-  // Projeto 05 · Demo PDV — Lanchonete Demo
+  // Projeto 07 · Demo PDV — Lanchonete Demo
   // ---------------------------------------------------------------
   {
     name: "Demo PDV — Lanchonete Demo",

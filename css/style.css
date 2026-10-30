@@ -1173,6 +1173,10 @@ strong {
   background: var(--surface);
 }
 
+.job + .job {
+  margin-top: 20px;
+}
+
 .job__head {
   display: flex;
   flex-wrap: wrap;

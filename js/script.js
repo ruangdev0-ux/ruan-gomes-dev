@@ -52,7 +52,7 @@
     if (isValidUrl(project.demoUrl)) {
       buttons.push(`
         <a class="btn btn--primary btn--sm" href="${escapeHTML(project.demoUrl.trim())}" target="_blank" rel="noopener noreferrer">
-          Ver demonstração<span class="sr-only"> do ${name} (abre em nova aba)</span>
+          ${escapeHTML(project.demoLabel || "Ver demonstração")}<span class="sr-only"> do ${name} (abre em nova aba)</span>
           <svg class="icon" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
         </a>`);
     }
